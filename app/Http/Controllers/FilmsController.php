@@ -118,9 +118,24 @@ public function shows($id_film)
 
 public function search(){
     $search_text = $_GET['query'];
-    $film= Films::where('title','LIKE',"%{$search_text}%")->get();
+    $films= Films::where('titre','=',$search_text)->get();
+if (isset($films)){
+    return view('search',[
+        'films' => $films,
+    ]);
+   
+            
+}
+else{
 
-    return view('search')
+    return redirect()->route('notFound');
+
+}
+
+    
+            
+
+   
 }
 
 

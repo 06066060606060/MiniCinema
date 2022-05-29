@@ -26,4 +26,8 @@ Route::get('/film/{id}', [FilmsController::class, 'show'])->whereNumber('id');
 
 Route::get('/film/synopsis/{id}', [FilmsController::class, 'shows'])->whereNumber('id');
 
-Route::get('/search', [FilmsController::class, 'search']);
+Route::get('/search', [FilmsController::class, 'search'])->name('search');
+
+Route::get('/notFound', function () {
+    return view('notFound');
+});

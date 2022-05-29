@@ -8297,6 +8297,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 2.5rem;
   margin-right: 2.5rem;
 }
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.mx-1 {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
 .my-1 {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
@@ -8304,14 +8312,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .-mx-1 {
   margin-left: -0.25rem;
   margin-right: -0.25rem;
-}
-.mx-1 {
-  margin-left: 0.25rem;
-  margin-right: 0.25rem;
-}
-.my-2 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
 }
 .mt-4 {
   margin-top: 1rem;
@@ -8430,15 +8430,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-10 {
   height: 2.5rem;
 }
-.h-2\/3 {
-  height: 66.666667%;
-}
-.h-\[500PX\] {
-  height: 500PX;
-}
-.h-\[800PX\] {
-  height: 800PX;
-}
 .h-\[600PX\] {
   height: 600PX;
 }
@@ -8489,9 +8480,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-3\/4 {
   width: 75%;
-}
-.w-\[500PX\] {
-  width: 500PX;
 }
 .max-w-xl {
   max-width: 36rem;
@@ -9062,9 +9050,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .duration-300 {
   transition-duration: 300ms;
 }
-.duration-500 {
-  transition-duration: 500ms;
-}
 .ease-out {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
@@ -9378,10 +9363,6 @@ overflow: hidden;
     width: 33.333333%;
   }
 
-  .sm\:w-3\/5 {
-    width: 60%;
-  }
-
   .sm\:translate-y-0 {
     --tw-translate-y: 0px;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -9449,6 +9430,11 @@ overflow: hidden;
     visibility: visible;
   }
 
+  .md\:mx-2 {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
   .md\:mx-1 {
     margin-left: 0.25rem;
     margin-right: 0.25rem;
@@ -9467,11 +9453,6 @@ overflow: hidden;
   .md\:mx-0 {
     margin-left: 0px;
     margin-right: 0px;
-  }
-
-  .md\:mx-2 {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
   }
 
   .md\:mt-0 {
@@ -9528,10 +9509,6 @@ overflow: hidden;
 
   .lg\:flex {
     display: flex;
-  }
-
-  .lg\:w-full {
-    width: 100%;
   }
 
   .lg\:grid-cols-4 {

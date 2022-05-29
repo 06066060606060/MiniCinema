@@ -34,7 +34,7 @@
                 <div class="rounded-lg detail ">
                     <div class="w-3/5 m-5 mb-9">
                         <h1 class="m-4 text-3xl font-bold text-center text-black"> Synopsis</h1>
-                        <p class="my-4 leading-loose text-black sm:w-3/5 lg:w-full">{{ $filma['resume'] }}</p>
+                        <p class="my-4 leading-loose text-black w-full ">{{ $filma['resume'] }}</p>
 
                         <div class=" ligne">
                             <p class="w-1/2 my-4 text-black "> réaliser par : </p>

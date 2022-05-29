@@ -8293,17 +8293,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 1rem;
   margin-right: 1rem;
 }
-.mx-10 {
-  margin-left: 2.5rem;
-  margin-right: 2.5rem;
-}
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
-.mx-1 {
-  margin-left: 0.25rem;
-  margin-right: 0.25rem;
+.mx-10 {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
 }
 .my-1 {
   margin-top: 0.25rem;
@@ -8312,6 +8308,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .-mx-1 {
   margin-left: -0.25rem;
   margin-right: -0.25rem;
+}
+.mx-1 {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
 }
 .mt-4 {
   margin-top: 1rem;
@@ -9224,10 +9224,6 @@ overflow: hidden;
           text-decoration-line: underline;
 }
 
-.hover\:ease-in:hover {
-  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-}
-
 .focus\:border-indigo-400:focus {
   --tw-border-opacity: 1;
   border-color: rgb(129 140 248 / var(--tw-border-opacity));
@@ -9430,11 +9426,6 @@ overflow: hidden;
     visibility: visible;
   }
 
-  .md\:mx-2 {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-  }
-
   .md\:mx-1 {
     margin-left: 0.25rem;
     margin-right: 0.25rem;
@@ -9453,6 +9444,11 @@ overflow: hidden;
   .md\:mx-0 {
     margin-left: 0px;
     margin-right: 0px;
+  }
+
+  .md\:mx-2 {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
   }
 
   .md\:mt-0 {

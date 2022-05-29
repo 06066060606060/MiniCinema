@@ -119,7 +119,10 @@ public function shows($id_film)
 public function search(){
     $search_text = $_GET['query'];
     $films= Films::where('titre','=',$search_text)->get();
-if (isset($films)){
+    
+if ($search_text == $films)
+    
+{
     return view('search',[
         'films' => $films,
     ]);
@@ -128,7 +131,9 @@ if (isset($films)){
 }
 else{
 
-    return redirect()->route('notFound');
+    return view('notFound',[
+    
+    ]);
 
 }
 

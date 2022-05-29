@@ -29,5 +29,5 @@ Route::get('/film/synopsis/{id}', [FilmsController::class, 'shows'])->whereNumbe
 Route::get('/search', [FilmsController::class, 'search'])->name('search');
 
 Route::get('/notFound', function () {
-    return view('notFound');
+    return view('notFound')->name('notFound');
 });

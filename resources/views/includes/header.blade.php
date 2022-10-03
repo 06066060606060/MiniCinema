@@ -38,20 +38,37 @@
                   <a class="my-1 text-sm leading-5 text-gray-700 transition-colors duration-200 transform hover:text-red-700 hover:underline md:mx-4 md:my-0"
                       href="{{ route('welcome') }}">Home</a>
                   <a class="my-1 text-sm leading-5 text-gray-700 transition-colors duration-200 transform hover:text-red-700 hover:underline md:mx-4 md:my-0"
-                      href="#">Salle 1</a>
+                      href="{{ route('user') }}">Salle 1</a>
                   <a class="my-1 text-sm leading-5 text-gray-700 transition-colors duration-200 transform hover:text-red-700 hover:underline md:mx-4 md:my-0"
-                      href="#">Salle 2</a>
-                  <a class="my-1 text-sm leading-5 text-gray-700 transition-colors duration-200 transform hover:text-red-700 hover:underline md:mx-4 md:my-0"
-                      href="#">Salle 3</a>
-                  <a class="my-1 text-sm leading-5 text-gray-700 transition-colors duration-200 transform hover:text-red-700 hover:underline md:mx-4 md:my-0"
-                      href="{{ route('backend') }}">backend</a>
+                      href="{{ route('crudee') }}">Salle 3</a>
+                @auth  <a class="my-1 text-sm leading-5 text-gray-700 transition-colors duration-200 transform hover:text-red-700 hover:underline md:mx-4 md:my-0"
+                      href="{{ route('backend') }}">backend</a> @endauth
+                 @auth  <a class="my-1 text-sm leading-5 text-gray-700 transition-colors duration-200 transform hover:text-red-700 hover:underline md:mx-4 md:my-0"
+                      href="{{ route('signout') }}">Deconnexion</a>@endauth
+                      
               </div>
 
-              <div class="flex items-center py-2 -mx-1 md:mx-0">
+        <div class="  sm:order-3 flex justify-end gap-1 fa-2xl mr-2">
+            @guest <i class="fa-solid fa-circle-user text-gray-500 "></i> @endguest
+              @auth <i class="fa-solid fa-circle-user text-red-500 "></i> @endauth
+             
+
+                           
+         </div>                    
+
+              @guest
+               <div class="flex items-center py-2 -mx-1 md:mx-0">
                   <a class="block w-1/2 px-3 py-2 mx-1 text-sm font-medium leading-5 text-center text-white transition-colors duration-200 transform bg-red-700 rounded-md hover:bg-red-500 md:mx-2 md:w-auto"
-                      href="#">Login</a>
+                      href="{{ route('register') }}">S'inscrire</a>
+                   
 
               </div>
+              <div class="flex items-center py-2 -mx-1 md:mx-0">
+                <a class="block w-1/2 px-3 py-2 mx-1 text-sm font-medium leading-5 text-center text-white transition-colors duration-200 transform bg-red-700 rounded-md hover:bg-red-500 md:mx-2 md:w-auto"
+                    href="{{ route('login') }}">Se connecter</a>
+
+            </div>
+            @endguest  
 
               <!-- Search input on mobile screen -->
               <div class="mt-3 md:hidden">

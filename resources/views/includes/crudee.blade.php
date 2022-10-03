@@ -1,7 +1,10 @@
+@extends('layouts.app')
+@section('main')
+
 <section class="mt-6 text-black bg-gray-200 rounded-lg body-font">
     <div class="container px-5 py-10 mx-auto ">
         <div class="flex flex-col w-full mb-20 text-center ">
-            <h1 class="pb-4 mb-2 text-3xl font-medium sm:text-4xl title-font">Liste des Films</h1>
+            <h1 class="pb-4 mb-2 text-3xl font-medium sm:text-4xl title-font">Liste des Utilisateurs</h1>
 
             <table class="object-center whitespace-no-wrap bg-gray-100 table-auto">
                 @include('includes.ajouter')
@@ -24,13 +27,11 @@
                 <thead>
                     <tr
                         class="px-4 py-3 text-sm font-medium tracking-wider text-white rounded-b title-font bg-slate-600">
-                        <th class="px-5 py-3 border-2 ">Titre</th>
-                        <th class="px-5 py-3 border-2 ">Image</th>
-                        <th class="px-5 py-3 border-2 ">Resumé</th>
-                        <th class="px-5 py-3 border-2 ">Catégorie</th>
-                        <th class="px-5 py-3 border-2 ">Durée</th>
-                        <th class="px-5 py-3 border-2 ">En salle</th>
-                        <th class="px-5 py-3 border-2 ">Nouveau</th>
+                        <th class="px-5 py-3 border-2 ">Nom</th>
+                        <th class="px-5 py-3 border-2 ">Prenom</th>
+                        <th class="px-5 py-3 border-2 ">email</th>
+                        <th class="px-5 py-3 border-2 ">Roles</th>
+                       
                         <th class="px-5 py-3 border-2 ">Modifier</th>
                     </tr>
                 </thead>
@@ -38,7 +39,7 @@
                     @foreach ($films as $film)
                         <tr class="tborder">
                             <td class="px-4 py-3 border-2 "><a
-                                    href="/film/{{ $film['id_film'] }}">{{ $film['titre'] }} {{ $film['name'] }}</a></td>
+                                    href="/film/{{ $film['id_film'] }}">{{ $film['titre'] }}</a></td>
                             <td class="px-4 py-3 border-2"><img class="rounded-lg w-80"
                                     src="{{ Storage::url($film->image) }}"> </td>
                             <td class="px-4 py-3 border-2 "><a class="resume">{{ $film->resume }}</a></td>
@@ -47,9 +48,7 @@
                            <a>{{ $categorie->genre }}</a>
                             @endforeach
                         </td>
-                            <td class="px-4 py-3 border-2"><a>{{ $film->duree}}</a></td>
-                            <td class="px-4 py-3 border-2"><a>{{ $film->affiche }}</a></td>
-                            <td class="px-4 py-3 border-2"><a>{{ $film->news }}</a></td>
+                          
                             <td class="px-4 py-3 border-2">@include('includes.update')
                                 @include('includes.delete')
                             </td>
@@ -61,3 +60,5 @@
         </div>
     </div>
 </section>
+
+@endsection

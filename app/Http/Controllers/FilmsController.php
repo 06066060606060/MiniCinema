@@ -7,7 +7,7 @@ use App\Models\Films;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-
+use Throwable;
 
 class FilmsController extends Controller
 {
@@ -37,12 +37,26 @@ class FilmsController extends Controller
     }
 
 
+    public function crudee()
+    {
+        $films = Films::All();
+        $categories = Categories::All();
+   
+        return view('includes.crudee', [
+            'films' => $films,
+            'categories' => $categories,
+        ]);
+    }
+
+
+
     public function create(Request $request)
     {
 //dd($request);
         $path = Storage::disk('public')->put('img', $request->file('images'));    //chemin + nom image
         $film = new Films();
         $film->titre = $request->titre;
+        $film->name = $request->name;
         $film->affiche = $request->affiche;
         $film->bandeannonce = $request->bandeannonce;
         $film->resume = $request->resume;
@@ -63,6 +77,7 @@ class FilmsController extends Controller
         $path = Storage::disk('public')->put('img', $request->file('images'));    //chemin + nom image
         $film = Films::find($id_film);
         $film->titre = $request->titre;
+        $film->name = $request->name;
         $film->affiche = $request->affiche;
         $film->bandeannonce = $request->bandeannonce;
         $film->resume = $request->resume;
@@ -105,5 +120,30 @@ class FilmsController extends Controller
         return view('search', [
             'films' => $films,
         ]);
+    }
+
+    public function creatememo(Request $request, $id)
+    {
+        try {
+
+            $validate = $request->validate([
+            'contenu' => 'required',
+
+        ]);
+
+
+
+        $memos = new Memos();
+        $memos->user_id = Auth::id();
+        $memos->videoId = "$id";
+        $memos->contenu = $request['contenu'];
+        $memos->save();
+
+    } catch (Throwable $e) {
+        report($e);
+        return redirect()->route('watch', $memos->videoId)->with('status','Veuillez ajouter la video dans la biblioteque pour pouvoir insérer un memo.');
+
+    }
+        return redirect()->route('watch', $memos->videoId);
     }
 }

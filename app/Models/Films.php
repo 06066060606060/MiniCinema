@@ -19,4 +19,9 @@ class Films extends Model
        return $this->belongsToMany(Categories::class, 'film_categorie', 'film_id', 'categorie_id');
     }
 
+    public function days()
+    {
+        return $this->belongsToMany(days::class, 'workhours','start_time', 'end_time');
+    }
+
 }

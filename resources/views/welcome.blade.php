@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('main')
-@include('includes.sortie')
 @include('includes.abo')
+@include('includes.sortie')
 @endsection
 
 @section('content')

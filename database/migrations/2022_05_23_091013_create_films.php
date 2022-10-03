@@ -23,6 +23,8 @@ return new class extends Migration
             $table->string('realisateur',100);
             $table->string('duree');
             $table->string('affiche',250);
+            $table->string('news',200);
+            $table->string('name',50);
         });
     }
 
